@@ -27,14 +27,6 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
       'Hello! I\'m Alyssa Gable.',
       'Full Stack Developer and WGU IT student exploring the intersection of code and ethics.',
       'I blend technology, design, and community work to create meaningful digital experiences.',
-      'Currently building web apps, diving into Ethical AI/ML, and empowering youth through gardening with volunteering.',
-       'Available commands:',
-      '  about     - Learn about me',
-      '  skills    - View my some of my skills',
-      '  portfolio - Open my portfolio showcase',
-      '  contact   - Get my contact information',
-      '  clear     - Clear the terminal',
-      '  whoami    - Display current user'
     ],
     skills: () => [
      'Technical Skills:',
@@ -68,7 +60,14 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
     if (ready) {
       setOutput([
         'Welcome to Alyssa G\'s Terminal',
-        'Type "help" for available commands.',
+        'Curious about my work? Here are some commands you can type in to get started:',
+
+        'resume - Check out my resume and get in touch!',
+        'experience - Explore my work history',
+        'projects - See some of the cool projects I’ve been working on',
+        'rates - Find out about my freelance software dev and marketing rates',
+        'clear - Clear the terminal screen',
+        'help - List available commands',
         ''
       ]);
     }
