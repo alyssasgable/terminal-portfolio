@@ -54,7 +54,7 @@ export const PortfolioPopup: React.FC<PortfolioPopupProps> = ({ isOpen, onClose 
               src="https://airtable.com/embed/appPj2wSAZlpvqiuZ/shr2EGmprMYUnISjx?viewControls=on"
               frameBorder="0"
               style={{ background: 'transparent' }}
-              title="Alyssa Gable Portfolio"
+              title="Alyssa Gable's Portfolio"
             />
           </div>
         </div>
@@ -62,7 +62,7 @@ export const PortfolioPopup: React.FC<PortfolioPopupProps> = ({ isOpen, onClose 
         {/* Terminal-style footer */}
         <div className="border-t border-green-400/30 px-4 py-2 bg-gray-800/50">
           <div className="flex items-center justify-between text-xs text-green-400/70 font-mono">
-            <span>Portfolio loaded successfully</span>
+            <span>Greatness loaded successfully</span>
             <span>Press ESC or click X to close</span>
           </div>
         </div>

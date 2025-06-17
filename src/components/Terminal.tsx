@@ -17,7 +17,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
     help: () => [
       'Available commands:',
       '  about     - Learn about me',
-      '  skills    - View my technical skills',
+      '  skills    - View my some of my skills',
       '  portfolio - Open my portfolio showcase',
       '  contact   - Get my contact information',
       '  clear     - Clear the terminal',
@@ -25,16 +25,26 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
     ],
     about: () => [
       'Hello! I\'m Alyssa Gable.',
-      'Full Stack Developer with a passion for creative technology.',
-      'I blend code with art to create meaningful digital experiences.',
-      'Currently building innovative web applications and exploring AI/ML.'
+      'Full Stack Developer and WGU IT student exploring the intersection of code and ethics.',
+      'I blend technology, design, and community work to create meaningful digital experiences.',
+      'Currently building web apps, diving into Ethical AI/ML, and empowering youth through gardening with volunteering.',
+       'Available commands:',
+      '  about     - Learn about me',
+      '  skills    - View my some of my skills',
+      '  portfolio - Open my portfolio showcase',
+      '  contact   - Get my contact information',
+      '  clear     - Clear the terminal',
+      '  whoami    - Display current user'
     ],
     skills: () => [
-      'Technical Skills:',
-      '├── Frontend: React, TypeScript, Next.js, Tailwind CSS',
-      '├── Backend: Node.js, Python, PostgreSQL, MongoDB',
-      '├── Tools: Git, Docker, AWS, Figma',
-      '└── Creative: Digital Art, UI/UX Design, 3D Modeling'
+     'Technical Skills:',
+      '├── Languages: Swift, HTML, CSS, JavaScript, Python, C, C++, Java, SQL',
+      '├── Testing: Selenium, JUnit, Zephyr',
+      '├── Tools: Git, GitHub, Jira, Xcode',
+      '├── Platforms: Linux, Windows, macOS',
+      '├── Community: Youth Education, Garden-Based Learning, Nonprofit Program Support',
+      '├── Teaching: Classroom Management, Lesson Planning, Curriculum Design (AmeriCorps, CYEA)',
+      '└── Other: OS X, Command Line, Agile Development, Cross-functional Teamwork'
     ],
     portfolio: () => {
       onPortfolioCommand();
@@ -42,7 +52,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
     },
     contact: () => [
       'Contact Information:',
-      '📧 Email: alyssa@example.com',
+      '📧 Email: alyssasgable@gmail.com',
       '🌐 Website: alyssagable.art',
       '💼 LinkedIn: /in/alyssagable',
       '🐙 GitHub: /alyssasgable'
@@ -57,7 +67,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
   useEffect(() => {
     if (ready) {
       setOutput([
-        'Welcome to Alyssa\'s Terminal Portfolio v2.0',
+        'Welcome to Alyssa G\'s Terminal',
         'Type "help" for available commands.',
         ''
       ]);
