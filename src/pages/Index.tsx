@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Terminal } from '@/components/Terminal';
 import { PortfolioPopup } from '@/components/PortfolioPopup';
+import { ExperiencePopup } from '@/components/ExperiencePopup';
 import { GlitchText } from '@/components/GlitchText';
 import { TypeWriter } from '@/components/TypeWriter';
 
 const Index = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
+  const [showExperience, setShowExperience] = useState(false);
   const [terminalReady, setTerminalReady] = useState(false);
 
   useEffect(() => {
@@ -45,6 +47,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <Terminal 
             onPortfolioCommand={() => setShowPortfolio(true)}
+            onExperienceCommand={() => setShowExperience(true)}
             ready={terminalReady}
           />
         </div>
@@ -70,6 +73,12 @@ const Index = () => {
       <PortfolioPopup 
         isOpen={showPortfolio}
         onClose={() => setShowPortfolio(false)}
+      />
+
+      {/* Experience popup */}
+      <ExperiencePopup 
+        isOpen={showExperience}
+        onClose={() => setShowExperience(false)}
       />
     </div>
   );

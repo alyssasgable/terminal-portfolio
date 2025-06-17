@@ -1,13 +1,13 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Minimize2, Maximize2, X } from 'lucide-react';
 
 interface TerminalProps {
   onPortfolioCommand: () => void;
+  onExperienceCommand: () => void;
   ready: boolean;
 }
 
-export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready }) => {
+export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperienceCommand, ready }) => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<string[]>([]);
   const [isMinimized, setIsMinimized] = useState(false);
@@ -16,12 +16,13 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
   const commands = {
     help: () => [
       'Available commands:',
-      '  about     - Learn about me',
-      '  skills    - View my some of my skills',
-      '  portfolio - Open my portfolio showcase',
-      '  contact   - Get my contact information',
-      '  clear     - Clear the terminal',
-      '  whoami    - Display current user'
+      '  about       - Learn about me',
+      '  skills      - View my some of my skills',
+      '  experience  - Browse my work experience',
+      '  portfolio   - Open my portfolio showcase',
+      '  contact     - Get my contact information',
+      '  clear       - Clear the terminal',
+      '  whoami      - Display current user'
     ],
     about: () => [
       'Hello! I\'m Alyssa Gable.',
@@ -38,6 +39,10 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
       '├── Teaching: Classroom Management, Lesson Planning, Curriculum Design (AmeriCorps, CYEA)',
       '└── Other: OS X, Command Line, Agile Development, Cross-functional Teamwork'
     ],
+    experience: () => {
+      onExperienceCommand();
+      return ['Loading work experience...'];
+    },
     portfolio: () => {
       onPortfolioCommand();
       return ['Opening portfolio showcase...'];
