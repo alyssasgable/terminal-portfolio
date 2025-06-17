@@ -1,0 +1,160 @@
+
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronRight, Minimize2, Maximize2, X } from 'lucide-react';
+
+interface TerminalProps {
+  onPortfolioCommand: () => void;
+  ready: boolean;
+}
+
+export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready }) => {
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState<string[]>([]);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  
+  const commands = {
+    help: () => [
+      'Available commands:',
+      '  about     - Learn about me',
+      '  skills    - View my technical skills',
+      '  portfolio - Open my portfolio showcase',
+      '  contact   - Get my contact information',
+      '  clear     - Clear the terminal',
+      '  whoami    - Display current user'
+    ],
+    about: () => [
+      'Hello! I\'m Alyssa Gable.',
+      'Full Stack Developer with a passion for creative technology.',
+      'I blend code with art to create meaningful digital experiences.',
+      'Currently building innovative web applications and exploring AI/ML.'
+    ],
+    skills: () => [
+      'Technical Skills:',
+      '├── Frontend: React, TypeScript, Next.js, Tailwind CSS',
+      '├── Backend: Node.js, Python, PostgreSQL, MongoDB',
+      '├── Tools: Git, Docker, AWS, Figma',
+      '└── Creative: Digital Art, UI/UX Design, 3D Modeling'
+    ],
+    portfolio: () => {
+      onPortfolioCommand();
+      return ['Opening portfolio showcase...'];
+    },
+    contact: () => [
+      'Contact Information:',
+      '📧 Email: alyssa@example.com',
+      '🌐 Website: alyssagable.art',
+      '💼 LinkedIn: /in/alyssagable',
+      '🐙 GitHub: /alyssasgable'
+    ],
+    whoami: () => ['alyssa@terminal:~$'],
+    clear: () => {
+      setOutput([]);
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    if (ready) {
+      setOutput([
+        'Welcome to Alyssa\'s Terminal Portfolio v2.0',
+        'Type "help" for available commands.',
+        ''
+      ]);
+    }
+  }, [ready]);
+
+  const handleCommand = (cmd: string) => {
+    const command = cmd.toLowerCase().trim();
+    const newOutput = [...output, `$ ${cmd}`];
+    
+    if (commands[command as keyof typeof commands]) {
+      const result = commands[command as keyof typeof commands]();
+      if (result.length > 0) {
+        newOutput.push(...result, '');
+      }
+    } else if (command === '') {
+      // Empty command
+    } else {
+      newOutput.push(`Command not found: ${command}`, 'Type "help" for available commands.', '');
+    }
+    
+    setOutput(newOutput);
+    setInput('');
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleCommand(input);
+    }
+  };
+
+  if (isMinimized) {
+    return (
+      <div className="fixed bottom-4 left-4 z-50">
+        <button
+          onClick={() => setIsMinimized(false)}
+          className="bg-gray-800 text-green-400 px-4 py-2 rounded border border-green-400 hover:bg-gray-700 transition-colors animate-pulse"
+        >
+          Terminal
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-gray-900 border border-green-400 rounded-lg shadow-2xl animate-fade-in">
+      {/* Terminal header */}
+      <div className="bg-gray-800 border-b border-green-400 px-4 py-2 flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+          <span className="ml-4 text-sm text-green-400">alyssa@portfolio:~</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => setIsMinimized(true)}
+            className="text-green-400 hover:text-green-300 transition-colors"
+          >
+            <Minimize2 size={16} />
+          </button>
+          <button className="text-green-400 hover:text-green-300 transition-colors">
+            <Maximize2 size={16} />
+          </button>
+        </div>
+      </div>
+
+      {/* Terminal content */}
+      <div className="p-4 h-96 overflow-y-auto bg-black">
+        {/* Output */}
+        <div className="space-y-1">
+          {output.map((line, index) => (
+            <div 
+              key={index} 
+              className={`${line.startsWith('$') ? 'text-green-300' : 'text-green-400'} font-mono text-sm`}
+            >
+              {line}
+            </div>
+          ))}
+        </div>
+
+        {/* Input line */}
+        <div className="flex items-center mt-2">
+          <ChevronRight className="text-green-400 mr-2" size={16} />
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyPress={handleKeyPress}
+            className="bg-transparent text-green-400 outline-none flex-1 font-mono text-sm"
+            placeholder="Type a command..."
+            autoFocus
+          />
+          <div className="w-2 h-5 bg-green-400 animate-pulse ml-1"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
