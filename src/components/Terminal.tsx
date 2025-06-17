@@ -61,7 +61,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, ready })
       setOutput([
         'Welcome to Alyssa G\'s Terminal',
         'Curious about my work? Here are some commands you can type in to get started:',
-
+        '',
         'resume - Check out my resume and get in touch!',
         'experience - Explore my work history',
         'projects - See some of the cool projects I’ve been working on',
