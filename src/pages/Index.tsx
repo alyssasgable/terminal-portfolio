@@ -71,18 +71,6 @@ const Index = () => {
         isOpen={showPortfolio}
         onClose={() => setShowPortfolio(false)}
       />
-
-      {/* CSS animations */}
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        @keyframes pulse {
-          0% { opacity: 0.1; }
-          100% { opacity: 0.3; }
-        }
-      `}</style>
     </div>
   );
 };
