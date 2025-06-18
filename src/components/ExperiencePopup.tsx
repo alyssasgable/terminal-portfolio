@@ -32,6 +32,19 @@ const experiences = [
     ]
   },
   {
+  company: "HANDS ON ATLANTA (AmeriCorps)",
+  role: "TUTOR / VOLUNTEER",
+  period: "08/2022 - 05/2023",
+  location: "ATLANTA, GA",
+  responsibilities: [
+    "Provided small-group tutoring in ELA and math to 2nd grade students at Drew Charter Elementary",
+    "Tracked student academic progress and adjusted tutoring strategies accordingly",
+    "Collaborated with teachers to co-plan lessons and support classroom activities",
+    "Assisted with daily school operations and helped maintain a positive learning environment",
+    "Supported student engagement in project-based learning; see example project: https://sites.google.com/drewcharterschools.org/secondgradepbl3/home"
+  ]
+  },
+  {
     company: "CHAINBRIDGE SOLUTIONS",
     role: "SOFTWARE TEST ENGINEER",
     period: "12/2020 - 04/2023",

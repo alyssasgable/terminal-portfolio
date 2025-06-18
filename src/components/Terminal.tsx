@@ -67,13 +67,13 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
         'Welcome to Alyssa G\'s Terminal',
         'Curious about my work? Here are some commands you can type in to get started:',
         '',
-        'resume - Check out my resume and get in touch!',
-        'experience - Explore my work history',
-        'projects - See some of the cool projects I’ve been working on',
-        'rates - Find out about my freelance software dev and marketing rates',
-        'clear - Clear the terminal screen',
-        'help - List available commands',
-        ''
+        '  about     - Learn about me',
+        '  experience    - View my work experience',
+        '  skills    - View my some of my skills',
+        '  portfolio - Open my portfolio showcase',
+        '  contact   - Get my contact information',
+        '  clear     - Clear the terminal',
+        '  whoami    - Display current user'
       ]);
     }
   }, [ready]);
