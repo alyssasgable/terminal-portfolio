@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Minimize2, Maximize2, X } from 'lucide-react';
 
@@ -11,6 +12,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<string[]>([]);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   
   const commands = {
@@ -56,7 +58,11 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
     ],
     whoami: () => ['alyssa@terminal:~$'],
     clear: () => {
-      setOutput([]);
+      setIsClearing(true);
+      setTimeout(() => {
+        setOutput([]);
+        setIsClearing(false);
+      }, 300);
       return [];
     }
   };
@@ -142,7 +148,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
       {/* Terminal content */}
       <div className="p-4 h-96 overflow-y-auto bg-black">
         {/* Output */}
-        <div className="space-y-1">
+        <div className={`space-y-1 transition-opacity duration-300 ${isClearing ? 'opacity-0' : 'opacity-100'}`}>
           {output.map((line, index) => (
             <div 
               key={index} 
