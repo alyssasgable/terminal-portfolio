@@ -5,6 +5,7 @@ import { PortfolioPopup } from '@/components/PortfolioPopup';
 import { ExperiencePopup } from '@/components/ExperiencePopup';
 import { GlitchText } from '@/components/GlitchText';
 import { TypeWriter } from '@/components/TypeWriter';
+import CalTechHelp from '@/components/CalTechHelp';
 
 const Index = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -27,7 +28,7 @@ const Index = () => {
           animation: 'pulse 4s ease-in-out infinite alternate'
         }} />
       </div>
-
+      <CalTechHelp />
       {/* Main content */}
       <div className="relative z-10 p-6">
         {/* Header */}
