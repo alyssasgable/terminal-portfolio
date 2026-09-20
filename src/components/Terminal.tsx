@@ -20,6 +20,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
       'Available commands:',
       '  about       - Learn about me',
       '  skills      - View my some of my skills',
+      '  tech help   - Need help with a tech project?',
       '  experience  - Browse my work experience',
       '  portfolio   - Open my portfolio showcase',
       '  contact     - Get my contact information',
@@ -41,6 +42,25 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
       '├── Teaching: Classroom Management, Lesson Planning, Curriculum Design (AmeriCorps, CYEA)',
       '└── Other: OS X, Command Line, Agile Development, Cross-functional Teamwork'
     ],
+    "tech-help": () => [
+     "TECH HELP SESSION",
+     "────────────────────────────────",
+     "Have a tech problem? You don't need to know",
+     "how to fix it before you book.",
+     "",
+     "✓ Website problems",
+     "✓ Domains & DNS",
+     "✓ Business email",
+     "✓ Forms & business tools",
+     "✓ Email marketing",
+     "✓ App connections",
+     "✓ Automation & workflows",
+     "✓ General tech troubleshooting",
+     "",
+     "30-minute session — $75",
+     "",
+     "Book: https://cal.com/alyssa-gable/tech-help",
+   ],
     experience: () => {
       onExperienceCommand();
       return ['Loading work experience...'];

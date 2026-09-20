@@ -66,9 +66,9 @@ const CalTechHelp = () => {
           layout: "month_view",
           useSlotsViewOnSmallScreen: "true"
         },
-        buttonText: "Need some Tech Help?",
-        buttonColor: "#ff0000",
-        buttonTextColor: "#ffffff"
+        buttonText: "> TECH HELP?",
+        buttonColor: "#000000",
+        buttonTextColor: "#4ade80"
       });
 
       Cal.ns["tech-help"]("ui", {
