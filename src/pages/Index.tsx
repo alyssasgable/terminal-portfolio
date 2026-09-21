@@ -46,7 +46,7 @@ const Index = () => {
             className="text-4xl md:text-6xl font-bold mb-2"
           />
           <TypeWriter 
-            text="Creative Technologist | Automation & Web Dev Tech Consultant |"
+            text="Creative Technologist | Automation & Web Dev Tech Consultant "
             className="text-lg md:text-xl text-green-300"
             delay={2000}
           />
