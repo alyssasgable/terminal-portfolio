@@ -1,3 +1,26 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #000000;
+}
+
+html {
+  background: #000000;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  background: #000000;
+}
+
+#root {
+  min-height: 100dvh;
+}
 
 @tailwind base;
 @tailwind components;
@@ -191,4 +214,9 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #16a34a;
+}
+
+html, body {
+  background-color: #000000;
+  overscroll-behavior-y: none;
 }
