@@ -5,7 +5,7 @@ import { PortfolioPopup } from '@/components/PortfolioPopup';
 import { ExperiencePopup } from '@/components/ExperiencePopup';
 import { GlitchText } from '@/components/GlitchText';
 import { TypeWriter } from '@/components/TypeWriter';
-import CalTechHelp from '@/components/CalTechHelp';
+import CalBookingButtons from '@/components/CalBookingButtons';
 
 const Index = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -18,7 +18,13 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-green-400 font-mono overflow-hidden relative">
+    <div
+  className="min-h-screen bg-black text-green-400 font-mono overflow-hidden relative"
+  style={{
+    minHeight: '100dvh',
+    backgroundColor: '#000000',
+  }}
+  >
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 to-blue-900/20" />
@@ -28,7 +34,9 @@ const Index = () => {
           animation: 'pulse 4s ease-in-out infinite alternate'
         }} />
       </div>
-      <CalTechHelp />
+
+      <CalBookingButtons />
+  
       {/* Main content */}
       <div className="relative z-10 p-6">
         {/* Header */}
@@ -38,7 +46,7 @@ const Index = () => {
             className="text-4xl md:text-6xl font-bold mb-2"
           />
           <TypeWriter 
-            text="Full Stack Developer | Creative Technologist | Digital Artist"
+            text="Creative Technologist | Automation & Web Dev Tech Consultant |"
             className="text-lg md:text-xl text-green-300"
             delay={2000}
           />
@@ -68,8 +76,8 @@ const Index = () => {
             />
           ))}
         </div>
-      </div>
-
+	</div>
+      
       {/* Portfolio popup */}
       <PortfolioPopup 
         isOpen={showPortfolio}
