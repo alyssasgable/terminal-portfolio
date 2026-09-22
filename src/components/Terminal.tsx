@@ -29,8 +29,9 @@ export const Terminal: React.FC<TerminalProps> = ({ onPortfolioCommand, onExperi
     ],
     about: () => [
       'Hello! I\'m Alyssa Gable.',
-      'Full Stack Developer and WGU IT student exploring the intersection of code and ethics.',
-      'I blend technology, design, and community work to create meaningful digital experiences.',
+      'I\'m a developer and creative technologist with 8+ years of experience building full stack and mobile applications, and I\'m currently a WGU IT student continuing to expand my technical foundation.',
+      'I enjoy turning ideas into things people can actually use, experience, and interact with. I work across web development, automation, and digital experiences, and I enjoy collaborating on everything from professional projects to personal ideas that need a little technology to bring them to life.',
+      'I\'m also exploring the world of AV and interactive experiences, with a growing interest in TouchDesigner, visual systems, and bringing digital ideas into physical spaces.',
     ],
     skills: () => [
      'Technical Skills:',
