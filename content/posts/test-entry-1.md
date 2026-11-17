@@ -9,7 +9,7 @@ tools:
 links:
   - label: Svelta CMS
     url: https://sveltiacms.app/en/docs/backends/github
-cover_image: ''
+cover_image: /images/journal/N8NAutomationExample2026-11-17.png
 video_url: ''
 ---
 
