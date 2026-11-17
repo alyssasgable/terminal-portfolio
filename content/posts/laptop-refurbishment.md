@@ -1,9 +1,9 @@
 ---
-title: "Learning Through Laptop Refurbishment"
+title: Learning Through Laptop Refurbishment
 date: 2026-11-01
-category: "Hardware"
-status: "EXPLORING"
-excerpt: "Exploring computer repair, hardware diagnostics, and ways to give older technology a second life."
+category: Hardware
+status: EXPLORING
+excerpt: Exploring computer repair, hardware diagnostics, and ways to give older technology a second life.
 tools:
   - Hardware Diagnostics
   - Windows
@@ -11,10 +11,12 @@ tools:
   - Repair Tools
   - iFixit
 links:
-  - label: "iFixit Laptop Repair Guides"
-    url: "https://www.ifixit.com/Device/PC_Laptop"
-  - label: "General Computer Repair Procedures"
-    url: "https://www.ifixit.com/Wiki/General_Computer_Repair_Procedures"
+  - label: iFixit Laptop Repair Guides
+    url: https://www.ifixit.com/Device/PC_Laptop
+  - label: General Computer Repair Procedures
+    url: https://www.ifixit.com/Wiki/General_Computer_Repair_Procedures
+cover_image: /images/journal/IMG_8734.jpeg
+video_url: ''
 ---
 
 I've been exploring laptop refurbishment as a way to build my hardware troubleshooting skills and better understand the technology I work with.
