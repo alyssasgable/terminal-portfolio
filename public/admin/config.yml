@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: alyssasgable/terminal-portfolio
+  branch: main
+  auth_methods:
+    - token
+
+media_folder: /public/images/journal
+public_folder: /images/journal
+
+collections:
+  - name: posts
+    label: Journal Posts
+    label_singular: Journal Post
+    folder: content/posts
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Date
+        name: date
+        widget: datetime
+        type: date
+        format: YYYY-MM-DD
+
+      - label: Category
+        name: category
+        widget: string
+
+      - label: Status
+        name: status
+        widget: select
+        options:
+          - label: Published
+            value: PUBLISHED
+          - label: In Progress
+            value: IN PROGRESS
+          - label: Learning
+            value: LEARNING
+          - label: Exploring
+            value: EXPLORING
+
+      - label: Short Description
+        name: excerpt
+        widget: text
+
+      - label: Tools and Technologies
+        name: tools
+        widget: list
+        field:
+          label: Tool
+          name: tool
+          widget: string
+
+      - label: Helpful Resources
+        name: links
+        widget: list
+        fields:
+          - label: Link Name
+            name: label
+            widget: string
+          - label: URL
+            name: url
+            widget: string
+
+      - label: Cover Image
+        name: cover_image
+        widget: image
+        required: false
+
+      - label: Video URL
+        name: video_url
+        widget: string
+        required: false
+
+      - label: Article Content
+        name: body
+        widget: richtext

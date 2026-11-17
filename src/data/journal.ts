@@ -1,3 +1,5 @@
+import matter from "gray-matter";
+
 export interface JournalPost {
   slug: string;
   title: string;
@@ -10,11 +12,13 @@ export interface JournalPost {
     label: string;
     url: string;
   }[];
-  content: string[];
+  content: string;
   videoUrl?: string;
+  coverImage?: string;
 }
 
-export const journalPosts: JournalPost[] = [
+// Existing journal entries are preserved here.
+const existingPosts: JournalPost[] = [
   {
     slug: "building-cyea-automation",
     title: "Building a Financial Reporting Workflow",
@@ -58,8 +62,7 @@ export const journalPosts: JournalPost[] = [
       "I'm using n8n to connect the services and JavaScript to transform and categorize the incoming data. One of the challenges is making sure website orders, in-person payments, and subscriptions are identified correctly.",
       "The workflow is still being refined. I'm currently working through the data structure and reporting logic so the final email is accurate and useful.",
       "This project is a good reminder that automation isn't just about connecting APIs. The data has to make sense before the results can be trusted.",
-    ],
-    videoUrl: "",
+    ].join("\n\n"),
   },
   {
     slug: "laptop-refurbishment",
@@ -91,8 +94,7 @@ export const journalPosts: JournalPost[] = [
       "I'm interested in learning how to diagnose common problems, evaluate hardware, identify worthwhile upgrades, and extend the life of older machines.",
       "There's also an environmental side to this. Repairing and reusing electronics can help reduce unnecessary electronic waste and keep useful equipment out of landfills.",
       "I want to keep documenting what I learn along the way, including the tools, repair resources, and troubleshooting techniques that are worth sharing.",
-    ],
-    videoUrl: "",
+    ].join("\n\n"),
   },
   {
     slug: "learning-touchdesigner-electronics",
@@ -128,7 +130,65 @@ export const journalPosts: JournalPost[] = [
       "I want to understand how physical components like sensors and other electronic inputs can communicate with software. I'm also exploring how audio signals and Python can become part of that process.",
       "Rather than learning everything separately, I want to build small experiments that combine electronics, programming, and visual design.",
       "The bigger goal is to create interactive installations and live visuals where the technology and the experience work together.",
-    ],
-    videoUrl: "",
+    ].join("\n\n"),
   },
 ];
+
+// Vite discovers Markdown files created by Sveltia CMS.
+const markdownFiles = import.meta.glob<string>(
+  "../../content/posts/*.md",
+  {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  }
+);
+
+function normalizeDate(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
+
+  return value ? String(value) : "";
+}
+
+function loadMarkdownPosts(): JournalPost[] {
+  return Object.entries(markdownFiles).map(([path, raw]) => {
+    const { data, content } = matter(raw);
+
+    const slug =
+      path.split("/").pop()?.replace(/\.md$/, "") || "untitled";
+
+    return {
+      slug,
+      title: String(data.title || "Untitled Entry"),
+      date: normalizeDate(data.date),
+      category: String(data.category || "General"),
+      status: String(data.status || "PUBLISHED"),
+      excerpt: String(data.excerpt || ""),
+      tools: Array.isArray(data.tools)
+        ? data.tools.map(String)
+        : [],
+      links: Array.isArray(data.links)
+        ? data.links.map((link: { label?: unknown; url?: unknown }) => ({
+            label: String(link.label || "Resource"),
+            url: String(link.url || ""),
+          }))
+        : [],
+      content: content.trim(),
+      videoUrl: data.video_url ? String(data.video_url) : undefined,
+      coverImage: data.cover_image
+        ? String(data.cover_image)
+        : undefined,
+    };
+  });
+}
+
+export const journalPosts: JournalPost[] = [
+  ...existingPosts,
+  ...loadMarkdownPosts(),
+].sort((a, b) => {
+  const dateA = new Date(a.date).getTime() || 0;
+  const dateB = new Date(b.date).getTime() || 0;
+  return dateB - dateA;
+});

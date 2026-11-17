@@ -1,6 +1,22 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { journalPosts } from "../data/journal";
+
+function formatDate(value: string) {
+  if (!value) return "";
+
+  // Preserve dates such as "November 2026" from older entries.
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+
+  const [year, month, day] = value.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
 
 function VideoEmbed({ url }: { url: string }) {
   if (!url) return null;
@@ -84,8 +100,12 @@ function Blog() {
     return (
       <main className="min-h-screen bg-black px-6 py-16 text-green-300">
         <div className="mx-auto max-w-3xl">
-          <p className="text-sm text-green-600">ERROR 404 // ENTRY NOT FOUND</p>
-          <h1 className="mt-4 text-3xl font-bold">Journal entry unavailable.</h1>
+          <p className="text-sm text-green-600">
+            ERROR 404 // ENTRY NOT FOUND
+          </p>
+          <h1 className="mt-4 text-3xl font-bold">
+            Journal entry unavailable.
+          </h1>
           <Link
             to="/blog"
             className="mt-8 inline-block text-green-500 hover:text-green-200"
@@ -117,13 +137,21 @@ function Blog() {
           </h1>
 
           <p className="mt-5 text-sm text-green-700">
-            {post.date} · ALYSSA GABLE
+            {formatDate(post.date)} · ALYSSA GABLE
           </p>
 
-          <div className="mt-10 space-y-6 text-base leading-8 text-green-200/80">
-            {post.content.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          {post.coverImage && (
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="mt-10 max-h-[480px] w-full rounded-xl border border-green-900 object-cover"
+            />
+          )}
+
+          <div className="prose prose-invert prose-green mt-10 max-w-none text-green-200/80 prose-headings:text-green-300 prose-p:leading-8 prose-a:text-green-400 prose-strong:text-green-300 prose-code:text-green-300 prose-pre:border prose-pre:border-green-900 prose-pre:bg-green-950/30 prose-blockquote:border-green-700">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.content}
+            </ReactMarkdown>
           </div>
 
           {post.tools && post.tools.length > 0 && (
@@ -237,31 +265,44 @@ function Blog() {
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
-              className="group block rounded-xl border border-green-950 bg-green-950/10 p-6 transition hover:border-green-600 hover:bg-green-950/25 md:p-8"
+              className="group block overflow-hidden rounded-xl border border-green-950 bg-green-950/10 transition hover:border-green-600 hover:bg-green-950/25"
             >
-              <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
-                <span className="tracking-widest text-green-500">
-                  ENTRY {String(index + 1).padStart(2, "0")} /{" "}
-                  {post.category.toUpperCase()}
-                </span>
-                <span className="text-green-800">{post.date}</span>
-              </div>
+              {post.coverImage && (
+                <img
+                  src={post.coverImage}
+                  alt=""
+                  loading="lazy"
+                  className="max-h-64 w-full object-cover"
+                />
+              )}
 
-              <h2 className="mt-5 text-xl font-bold text-green-300 transition group-hover:text-green-200 md:text-2xl">
-                {post.title}
-              </h2>
+              <div className="p-6 md:p-8">
+                <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <span className="tracking-widest text-green-500">
+                    ENTRY {String(index + 1).padStart(2, "0")} /{" "}
+                    {post.category.toUpperCase()}
+                  </span>
+                  <span className="text-green-800">
+                    {formatDate(post.date)}
+                  </span>
+                </div>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-green-700">
-                {post.excerpt}
-              </p>
+                <h2 className="mt-5 text-xl font-bold text-green-300 transition group-hover:text-green-200 md:text-2xl">
+                  {post.title}
+                </h2>
 
-              <div className="mt-6 flex items-center justify-between">
-                <span className="text-xs text-green-800">
-                  {post.status.toUpperCase()}
-                </span>
-                <span className="text-sm text-green-500 transition group-hover:translate-x-1">
-                  READ ENTRY →
-                </span>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-green-700">
+                  {post.excerpt}
+                </p>
+
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-xs text-green-800">
+                    {post.status.toUpperCase()}
+                  </span>
+                  <span className="text-sm text-green-500 transition group-hover:translate-x-1">
+                    READ ENTRY →
+                  </span>
+                </div>
               </div>
             </Link>
           ))}
