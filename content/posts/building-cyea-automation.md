@@ -1,9 +1,9 @@
 ---
-title: "Building a Financial Reporting Workflow"
+title: Building a Financial Reporting Workflow
 date: 2026-11-01
-category: "Automation"
-status: "IN PROGRESS"
-excerpt: "Using n8n and JavaScript to organize payment data and make financial reporting easier."
+category: Automation
+status: IN PROGRESS
+excerpt: Using n8n and JavaScript to organize payment data and make financial reporting easier.
 tools:
   - n8n
   - JavaScript
@@ -12,16 +12,18 @@ tools:
   - Google Sheets
   - Gmail
 links:
-  - label: "n8n Documentation"
-    url: "https://docs.n8n.io/"
-  - label: "Stripe API Documentation"
-    url: "https://docs.stripe.com/api"
-  - label: "WooCommerce REST API"
-    url: "https://woocommerce.github.io/woocommerce-rest-api-docs/"
-  - label: "n8n Google Sheets Integration"
-    url: "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/"
-  - label: "n8n Gmail Integration"
-    url: "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/"
+  - label: n8n Documentation
+    url: https://docs.n8n.io/
+  - label: Stripe API Documentation
+    url: https://docs.stripe.com/api
+  - label: WooCommerce REST API
+    url: https://woocommerce.github.io/woocommerce-rest-api-docs/
+  - label: n8n Google Sheets Integration
+    url: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/
+  - label: n8n Gmail Integration
+    url: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/
+cover_image: /images/journal/N8NAutomationExample2026-11-17.png
+video_url: ''
 ---
 
 I'm working on an automated financial reporting workflow for CYEA. The goal is to bring payment information from Stripe and WooCommerce into one organized report.
