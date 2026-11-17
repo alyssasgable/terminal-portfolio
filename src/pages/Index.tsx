@@ -35,7 +35,23 @@ const Index = () => {
         }} />
       </div>
 
+
       <CalBookingButtons />
+
+      {/* Live journal shortcut */}
+      <div className="relative z-20 flex justify-end px-6 pt-3">
+        <a
+          href="/blog"
+          className="inline-flex items-center gap-3 rounded-full border border-green-500/50 bg-black/90 px-5 py-3 text-xs font-bold tracking-widest text-green-300 shadow-lg shadow-green-950/40 transition hover:border-green-300 hover:bg-green-950/40"
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-400" />
+          </span>
+          LIVE JOURNAL
+          <span className="text-green-600">↗</span>
+        </a>
+      </div>
   
       {/* Main content */}
       <div className="relative z-10 p-6">
