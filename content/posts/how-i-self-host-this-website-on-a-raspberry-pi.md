@@ -26,11 +26,15 @@ video_url: ''
 
 I wanted more control over my personal website, so I decided to host it myself using a Raspberry Pi.
 
+
 Instead of relying on a traditional hosting platform, I configured my Pi to serve my portfolio directly from my home network using Nginx.
+
 
 The website is built with React, TypeScript, and Vite, giving me a flexible foundation for experimenting with new features and documenting projects.
 
+
 ## Automating deployments
+
 
 One of the biggest improvements was setting up GitHub Actions with a self-hosted runner on my Raspberry Pi.
 
@@ -50,7 +54,9 @@ This means I can update my portfolio without manually rebuilding and copying fil
 
 ## **Managing content**
 
+
 I also integrated Sveltia CMS so I can create and edit journal posts through a browser, including from my phone.
+
 
 My goal is to make documenting projects as easy as working on them.
 
@@ -58,6 +64,9 @@ My goal is to make documenting projects as easy as working on them.
 
 ## **What I'm learning**
 
+
 This project has been a practical way to work with Linux administration, web servers, CI/CD pipelines, Git, and self-hosted infrastructure.
+
+
 
 It's also helping me understand how the pieces of a web application fit together, from writing code to making it available online.
