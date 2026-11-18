@@ -30,6 +30,8 @@ Lately, I've been working on an automated financial reporting workflow for CYEA,
 
 The goal is to bring payment information from Stripe and WooCommerce into one organized report so that the CEO has a clearer view into the finances by just looking at an email.
 
+I’ve worked a lot with Selenium automation but this is my first time working with n8n. 
+
 I'm using n8n to connect the services and JavaScript to transform and categorize the incoming data. One of the challenges is making sure website orders, in-person payments, and subscriptions are identified correctly.
 
 It’s still a work in progress and the workflow is still being refined but I'm currently working through the data structure and reporting logic so the final email is accurate and useful.
