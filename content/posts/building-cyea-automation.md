@@ -26,10 +26,10 @@ cover_image: /images/journal/N8NAutomationExample2026-11-17.png
 video_url: ''
 ---
 
-I'm working on an automated financial reporting workflow for CYEA. The goal is to bring payment information from Stripe and WooCommerce into one organized report.
+Lately, I've been working on an automated financial reporting workflow for CYEA, a nonprofit organization I volunteer for. 
+
+The goal is to bring payment information from Stripe and WooCommerce into one organized report so that the CEO has a clearer view into the finances by just looking at an email.
 
 I'm using n8n to connect the services and JavaScript to transform and categorize the incoming data. One of the challenges is making sure website orders, in-person payments, and subscriptions are identified correctly.
 
-The workflow is still being refined. I'm currently working through the data structure and reporting logic so the final email is accurate and useful.
-
-This project is a good reminder that automation isn't just about connecting APIs. The data has to make sense before the results can be trusted.
+It’s still a work in progress and the workflow is still being refined but I'm currently working through the data structure and reporting logic so the final email is accurate and useful.
