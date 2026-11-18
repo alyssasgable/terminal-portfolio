@@ -149,7 +149,7 @@ function Blog() {
             />
           )}
 
-          <div className="prose prose-invert prose-green mt-10 max-w-none text-green-200/80 prose-headings:text-green-300 prose-p:leading-8 prose-a:text-green-400 prose-strong:text-green-300 prose-code:text-green-300 prose-pre:border prose-pre:border-green-900 prose-pre:bg-green-950/30 prose-blockquote:border-green-700">
+          <div className="prose prose-invert prose-green mt-10 max-w-none text-green-200/80 prose-headings:text-green-300 prose-p:my-6 prose-p:leading-8 prose-headings:mt-10 prose-headings:mb-4 prose-img:my-8 prose-a:text-green-400 prose-strong:text-green-300 prose-code:text-green-300 prose-pre:border prose-pre:border-green-900 prose-pre:bg-green-950/30 prose-blockquote:border-green-700">
             <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
               {post.content}
             </ReactMarkdown>
