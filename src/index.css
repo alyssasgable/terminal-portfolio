@@ -220,3 +220,39 @@ html, body {
   background-color: #000000;
   overscroll-behavior-y: none;
 }
+
+/* Journal article typography and spacing */
+.journal-content p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 2rem;
+}
+
+.journal-content h2,
+.journal-content h3,
+.journal-content h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #86efac;
+}
+
+.journal-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+}
+
+.journal-content ul,
+.journal-content ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.journal-content li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
