@@ -21,7 +21,9 @@ cover_image: /images/journal/IMG_8836.jpeg
 video_url: ''
 ---
 
-I've been interested in finding ways to connect electronics and creative coding. TouchDesigner gives me a way to turn incoming data into real-time visuals and interactive experiences.
+For about a year I’ve been learning TouchDesigner and finding ways to explore creative coding. 
+
+Recently, I’ve gained an interest in building my own electronics to control my visuals to make them more interactive. I got a an 
 
 I want to understand how physical components like sensors and other electronic inputs can communicate with software. I'm also exploring how audio signals and Python can become part of that process.
 
