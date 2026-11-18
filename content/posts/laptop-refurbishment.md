@@ -31,6 +31,6 @@ I’ve become really adamant about repairing and reusing electronics because it 
 
 I want to keep documenting what I learn along the way, including the tools, repair resources, and troubleshooting techniques that are worth sharing.
 
-But for now… I have to get these stickers off these laptops 😂
+But for now… I have to get these stickers off these laptops!
 
 ![Laptop with old sticker on it](/images/journal/IMG_8728.jpeg)
