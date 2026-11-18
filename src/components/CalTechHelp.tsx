@@ -11,16 +11,12 @@ const CalTechHelp = () => {
     script.async = true;
 
     document.body.appendChild(script);
-
-    return () => {
-      // Don't remove the shared Cal.com script.
-    };
   }, []);
 
   return (
     <button
       type="button"
-      data-cal-link="alyssa-gable/tech-help"
+      data-cal-link="alyssa-gable/fix-my-tech"
       data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
       className="w-full"
       style={{

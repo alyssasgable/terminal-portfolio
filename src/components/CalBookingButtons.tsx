@@ -113,8 +113,8 @@ const CalBookingButtons = () => {
     >
       <button
         type="button"
-        data-cal-link="alyssa-gable/tech-help"
-        data-cal-namespace="tech-help"
+        data-cal-link="alyssa-gable/fix-my-tech"
+        data-cal-namespace="fix-my-tech"
         data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
         style={{
           width: "100%",
