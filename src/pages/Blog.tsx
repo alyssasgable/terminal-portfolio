@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 import { journalPosts } from "../data/journal";
 
 function formatDate(value: string) {
@@ -149,7 +150,7 @@ function Blog() {
           )}
 
           <div className="prose prose-invert prose-green mt-10 max-w-none text-green-200/80 prose-headings:text-green-300 prose-p:leading-8 prose-a:text-green-400 prose-strong:text-green-300 prose-code:text-green-300 prose-pre:border prose-pre:border-green-900 prose-pre:bg-green-950/30 prose-blockquote:border-green-700">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
               {post.content}
             </ReactMarkdown>
           </div>
