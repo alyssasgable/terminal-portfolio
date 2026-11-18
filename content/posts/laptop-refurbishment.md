@@ -25,7 +25,7 @@ I’ve already been tinkering with restoring old desktops but I’m exciting to 
 
 These are being refurbished for a nonprofit organization in East Point, Atlanta who hosts a lot of workshops. I want to make sure that logging in is secure but also not connected to Windows so it’s simple.
 
-I’m exploring whether there’s a free bypass to logging in with Windows so I can just setup local accounts. Or I might just setup Zima OS, a popular Linux distribution instead  
+I’m exploring whether there’s a free bypass to logging in with Windows so I can just setup local accounts. Or I might just setup Zima OS, a popular Linux distribution instead.
 
 I’ve become really adamant about repairing and reusing electronics because it can help reduce unnecessary electronic waste and keep useful equipment out of landfills.
 
