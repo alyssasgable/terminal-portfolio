@@ -19,10 +19,18 @@ cover_image: /images/journal/IMG_8734.jpeg
 video_url: ''
 ---
 
-I've been exploring laptop refurbishment as a way to build my hardware troubleshooting skills and better understand the technology I work with.
+I was recently  given the opportunity to refurbish 8 donated HP laptops. 
 
-I'm interested in learning how to diagnose common problems, evaluate hardware, identify worthwhile upgrades, and extend the life of older machines.
+I’ve already been tinkering with restoring old desktops but I’m exciting to get some laptop refurbishment action! 
 
-There's also an environmental side to this. Repairing and reusing electronics can help reduce unnecessary electronic waste and keep useful equipment out of landfills.
+These are being refurbished for a nonprofit organization in East Point, Atlanta who hosts a lot of workshops. I want to make sure that logging in is secure but also not connected to Windows so it’s simple.
+
+I’m exploring whether there’s a free bypass to logging in with Windows so I can just setup local accounts. Or I might just setup Zima OS, a popular Linux distribution instead  
+
+I’ve become really adamant about repairing and reusing electronics because it can help reduce unnecessary electronic waste and keep useful equipment out of landfills.
 
 I want to keep documenting what I learn along the way, including the tools, repair resources, and troubleshooting techniques that are worth sharing.
+
+But for now… I have to get these stickers off these laptops 😂
+
+![Laptop with old sticker on it](/images/journal/IMG_8728.jpeg)
