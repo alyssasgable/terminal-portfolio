@@ -25,3 +25,5 @@ dist-ssr
 
 # GitHub Actions runner installation
 /actions-runner/
+
+/actions-runner/
