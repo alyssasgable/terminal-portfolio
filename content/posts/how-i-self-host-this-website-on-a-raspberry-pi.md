@@ -20,7 +20,7 @@ links:
     url: https://docs.github.com/en/actions
   - label: Sveltia CMS
     url: https://github.com/sveltia/sveltia-cms
-cover_image: ''
+cover_image: /images/journal/IMG_8846.jpeg
 video_url: ''
 ---
 
