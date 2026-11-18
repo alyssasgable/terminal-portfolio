@@ -50,12 +50,10 @@ jobs:
         with:
           name: portfolio-dist
           path: dist
-
       - name: Deploy website
         run: |
-          rsync -a --no-owner --no-group dist/ /var/www/alyssasvg/
-          rsync -a --delete --no-owner --no-group dist/assets/ /var/www/alyssasvg/assets/
-
+          rsync -rltD --no-perms --no-owner --no-group --omit-dir-times dist/ /var/www/alyssasvg/
+          rsync -rltD --no-perms --no-owner --no-group --omit-dir-times --delete dist/assets/ /var/www/alyssasvg/assets/
       - name: Confirm deployment
         run: |
           echo "Portfolio successfully deployed!"
