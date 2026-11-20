@@ -37,9 +37,9 @@ Microsoft continues to change its setup requirements, so this method isn’t gua
 
 **Building My Free Software Toolkit**
 
-Once Windows was ready, it was time for the fun part: applications.
+Once Windows was ready, it was time for the fun part: installing the applications.
 
-I try to avoid paying for software when a free alternative does the job. This is what I installed:
+![](/images/journal/IMG_8887.gif)I try to avoid paying for software when a free alternative does the job. This is what I installed:
 
 | **Application** | **What I’m using it for** |
 | [Google Drive](https://www.google.com/drive/) | Cloud storage and file syncing |
