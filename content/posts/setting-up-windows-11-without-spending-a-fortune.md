@@ -35,6 +35,8 @@ On compatible Windows 11 builds, this opens the local account creation window. N
 
 Microsoft continues to change its setup requirements, so this method isn’t guaranteed to work on every version.
 
+[**Watch Walkthrough here** ](https://youtu.be/_s_k1YXsCBo?is=PlCigb6NEwV60bmr)
+
 **Building My Free Software Toolkit**
 
 Once Windows was ready, it was time for the fun part: installing the applications.
