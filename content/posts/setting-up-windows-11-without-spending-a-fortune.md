@@ -56,4 +56,6 @@ Once Windows was ready, it was time for the fun part: installing the application
 
 A few of these are proprietary services with free plans, while the others are open-source projects. Either way, they help keep the setup functional without adding unnecessary expenses.
 
+Next up I need to figure out how to create a script  to install all of the next laptops easily.
+
 Back to removing old stickers and learning new things! ![](/images/journal/IMG_8886.jpeg)
